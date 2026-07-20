@@ -1,0 +1,45 @@
+{
+  "lastChangelogVersion": "0.80.3",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "kimi-k2.7-code",
+  "defaultThinkingLevel": "high",
+  "packages": [
+    "npm:context-mode",
+    "npm:pi-subagents",
+    "npm:pi-mcp-adapter",
+    "npm:pi-messenger",
+    "npm:pi-ask-user",
+    "npm:@ifi/oh-pi-themes",
+    "npm:pi-web-access",
+    "npm:pi-observational-memory",
+    "git:github.com/DietrichGebert/ponytail",
+    "npm:@zosmaai/pi-llm-wiki",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:@quintinshaw/pi-dynamic-workflows",
+    "npm:pi-powerline",
+    "npm:pi-thinking-steps",
+    "npm:pi-tool-display",
+    "npm:pi-supergsd",
+    "npm:sidelight",
+    "npm:@aliou/pi-guardrails",
+    "npm:@the-forge-flow/lumen",
+    "npm:pi-link"
+  ],
+  "extensions": [
+    "~/Desktop/devendras-work/dotfiles/coding-agent/pi/slash-exit.ts"
+  ],
+  "theme": "dark",
+  "enableInstallTelemetry": false,
+  "quietStartup": true,
+  "collapseChangelog": true,
+  "warnings": {
+    "anthropicExtraUsage": false
+  },
+  "showHardwareCursor": false,
+  "terminal": {
+    "clearOnShrink": true,
+    "showTerminalProgress": true
+  },
+  "hideThinkingBlock": false
+}
