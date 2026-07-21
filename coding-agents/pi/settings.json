@@ -1,19 +1,17 @@
 {
-  "lastChangelogVersion": "0.80.3",
+  "lastChangelogVersion": "0.80.10",
   "defaultProvider": "opencode-go",
   "defaultModel": "kimi-k2.7-code",
   "defaultThinkingLevel": "high",
   "packages": [
     "npm:context-mode",
-    "npm:pi-subagents",
     "npm:pi-mcp-adapter",
-    "npm:pi-messenger",
     "npm:pi-ask-user",
-    "npm:@ifi/oh-pi-themes",
     "npm:pi-web-access",
     "npm:pi-observational-memory",
     "git:github.com/DietrichGebert/ponytail",
     "npm:@zosmaai/pi-llm-wiki",
+    "npm:pi-claude-marketplace",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:@juicesharp/rpiv-todo",
     "npm:@quintinshaw/pi-dynamic-workflows",
@@ -24,12 +22,15 @@
     "npm:sidelight",
     "npm:@aliou/pi-guardrails",
     "npm:@the-forge-flow/lumen",
-    "npm:pi-link"
+    "npm:pi-link",
+    "npm:pi-token-burden",
+    "npm:pi-slim",
+    "npm:@tintinweb/pi-subagents"
   ],
   "extensions": [
     "~/Desktop/devendras-work/dotfiles/coding-agent/pi/slash-exit.ts"
   ],
-  "theme": "dark",
+  "theme": "matte-black",
   "enableInstallTelemetry": false,
   "quietStartup": true,
   "collapseChangelog": true,
@@ -41,5 +42,8 @@
     "clearOnShrink": true,
     "showTerminalProgress": true
   },
-  "hideThinkingBlock": false
+  "hideThinkingBlock": false,
+  "llm-wiki": {
+    "notices": false
+  }
 }
