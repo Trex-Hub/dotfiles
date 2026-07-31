@@ -1,1 +1,6 @@
 keybind = cmd+v=paste_from_clipboard
+keybind = option+backspace=text:\x17
+
+background-image = "~/Desktop/devendras-work/dotfiles/milky-way.jpg"
+background-image-opacity = 0.20
+background-image-fit = cover
