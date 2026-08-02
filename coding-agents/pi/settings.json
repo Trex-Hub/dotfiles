@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.80.10",
+  "lastChangelogVersion": "0.83.0",
   "defaultProvider": "opencode-go",
   "defaultModel": "kimi-k2.7-code",
   "defaultThinkingLevel": "high",
@@ -11,7 +11,6 @@
     "npm:pi-observational-memory",
     "git:github.com/DietrichGebert/ponytail",
     "npm:@zosmaai/pi-llm-wiki",
-    "npm:pi-claude-marketplace",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:@juicesharp/rpiv-todo",
     "npm:@quintinshaw/pi-dynamic-workflows",
@@ -23,9 +22,13 @@
     "npm:@aliou/pi-guardrails",
     "npm:@the-forge-flow/lumen",
     "npm:pi-link",
-    "npm:pi-token-burden",
     "npm:pi-slim",
-    "npm:@tintinweb/pi-subagents"
+    "npm:@tintinweb/pi-subagents",
+    "npm:pi-token-burden",
+    "npm:@plannotator/pi-extension",
+    "npm:@gaodes/pi-graphify",
+    "npm:pi-invisible-continue",
+    "npm:pi-loadout"
   ],
   "extensions": [
     "~/Desktop/devendras-work/dotfiles/coding-agent/pi/slash-exit.ts"
@@ -42,8 +45,15 @@
     "clearOnShrink": true,
     "showTerminalProgress": true
   },
-  "hideThinkingBlock": false,
+  "hideThinkingBlock": true,
   "llm-wiki": {
-    "notices": false
-  }
+    "notices": false,
+    "taskModel": {
+      "provider": "qwen-router",
+      "id": "qwen3.5-flash",
+      "thinking": "on"
+    }
+  },
+  "followUpMode": "one-at-a-time",
+  "doubleEscapeAction": "tree"
 }
