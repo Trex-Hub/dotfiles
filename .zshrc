@@ -1,5 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/share/google-cloud-sdk/bin"
 
 # Set "random" for a new theme everytime.
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -60,6 +61,24 @@ copy() {
   "$@" 2>&1 | tee /dev/tty | eval "$copy_cmd"
 }
 
+
+use-mouse() {
+  case "$1" in
+    true)
+      defaults write -g com.apple.swipescrolldirection -bool false
+      ;;
+    false)
+      defaults write -g com.apple.swipescrolldirection -bool true
+      ;;
+    *)
+      echo "Usage: use-mouse true|false" >&2
+      return 1
+      ;;
+  esac
+  /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+  echo "Natural scrolling $([ "$1" = true ] && echo OFF — mouse mode || echo ON — trackpad mode)"
+}
+
 # Completions
 # pnpm
 if command -v pnpm &>/dev/null; then
@@ -71,3 +90,14 @@ autoload -U +X bashcompinit && bashcompinit
 if command -v npm &>/dev/null; then
   eval "$(npm completion --loglevel error 2>/dev/null)"
 fi
+
+export LLAMA_SWAP=""
+
+source ~/.zshrc.local
+# pnpm
+export PNPM_HOME="/Users/dev/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end

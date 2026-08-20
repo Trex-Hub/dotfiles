@@ -1,20 +1,18 @@
 {
-  "lastChangelogVersion": "0.83.0",
-  "defaultProvider": "opencode-go",
-  "defaultModel": "kimi-k2.7-code",
+  "lastChangelogVersion": "0.84.2",
+  "defaultProvider": "z-router",
+  "defaultModel": "opencode/qwen3.7-max",
   "defaultThinkingLevel": "high",
   "packages": [
     "npm:context-mode",
     "npm:pi-mcp-adapter",
     "npm:pi-ask-user",
     "npm:pi-web-access",
-    "npm:pi-observational-memory",
     "git:github.com/DietrichGebert/ponytail",
     "npm:@zosmaai/pi-llm-wiki",
     "npm:@juicesharp/rpiv-ask-user-question",
     "npm:@juicesharp/rpiv-todo",
     "npm:@quintinshaw/pi-dynamic-workflows",
-    "npm:pi-powerline",
     "npm:pi-thinking-steps",
     "npm:pi-tool-display",
     "npm:pi-supergsd",
@@ -28,7 +26,11 @@
     "npm:@plannotator/pi-extension",
     "npm:@gaodes/pi-graphify",
     "npm:pi-invisible-continue",
-    "npm:pi-loadout"
+    "npm:pi-loadout",
+    "npm:pi-powerline",
+    "npm:@alexeiled/pi-fusion",
+    "npm:@danielmeneses/pi-llama-swap",
+    "npm:pi-blackhole"
   ],
   "extensions": [
     "~/Desktop/devendras-work/dotfiles/coding-agent/pi/slash-exit.ts"
@@ -55,5 +57,6 @@
     }
   },
   "followUpMode": "one-at-a-time",
-  "doubleEscapeAction": "tree"
+  "doubleEscapeAction": "tree",
+  "fullscreenScrollbar": "always"
 }
