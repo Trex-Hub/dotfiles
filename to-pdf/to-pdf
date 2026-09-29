@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+style="${TO_PDF_STYLE:-$HOME/.config/to-pdf/style.css}"
+
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
+  echo "usage: to-pdf <file.md> [output.pdf]" >&2
+  exit 1
+fi
+
+input=$1
+name=$(basename -- "$input")
+stem=${name%.*}
+output=${2:-"$stem.pdf"}
+generated="$(dirname -- "$input")/$stem.pdf"
+
+[ -f "$input" ] || { echo "to-pdf: no such file: $input" >&2; exit 1; }
+[ -f "$style" ] || { echo "to-pdf: style not found: $style" >&2; exit 1; }
+command -v md-to-pdf >/dev/null || { echo "to-pdf: install md-to-pdf with: npm install -g md-to-pdf" >&2; exit 1; }
+
+md-to-pdf "$input" \
+  --basedir "$(dirname "$input")" \
+  --stylesheet "$style" \
+  --page-media-type print \
+  --pdf-options '{"format":"A4","margin":{"top":"20mm","right":"20mm","bottom":"20mm","left":"20mm"},"printBackground":true,"preferCSSPageSize":true}'
+
+[ "$generated" -ef "$output" ] || mv "$generated" "$output"
+printf '%s\n' "$output"
