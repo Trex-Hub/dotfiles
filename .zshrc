@@ -113,3 +113,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 # opencode
 export PATH=/Users/dev/.opencode/bin:$PATH
+
+# Android SDK
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
