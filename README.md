@@ -15,6 +15,7 @@ Universal configs for my machines.
 | `herdr-app/keys.json`            | `~/.config/herdr-app/keys.json` | Herdr app shortcuts (see `herdr-app/README.md`)                                          |
 | `herdr-app/settings.json`        | `~/.config/herdr-app/settings.json` | Herdr app settings                                                                   |
 | `herdr-app/themes/gruvbox.json`  | `~/.config/herdr-app/themes/gruvbox.json` | Gruvbox theme for Herdr app                                                    |
+| `herdr-app/mods/spaces-gruvbox/`, `herdr-app/layouts/main-gruvbox.json` | `~/.config/herdr-app/` | Gruvbox space tiles (see `herdr-app/README.md`) |
 | `coding-agents/AGENTS.md`        | `~/.pi/agent/AGENTS.md`    | Global Agent instructions for any/every coding agent.                                              |
 | `coding-agents/pi/settings.json` | Pi settings                | Global config file containing curated list of extensions I hand picked and continue using everyday |
 | `coding-agents/pi/slash-exit.ts` | Custom slash command       | Something I stiched together because I'm lazy to type the default 'quit'. Bite me                  |
@@ -33,6 +34,9 @@ ln -sf ~/path/to/dotfiles/to-pdf/style.css ~/.config/to-pdf/style.css
 mkdir -p ~/.config/herdr-app/themes
 cp herdr-app/keys.json herdr-app/settings.json ~/.config/herdr-app/
 cp herdr-app/themes/gruvbox.json ~/.config/herdr-app/themes/
+mkdir -p ~/.config/herdr-app/mods ~/.config/herdr-app/layouts
+cp -r herdr-app/mods/spaces-gruvbox ~/.config/herdr-app/mods/
+cp herdr-app/layouts/main-gruvbox.json ~/.config/herdr-app/layouts/
 ```
 
 `to-pdf docs/file.md` creates `./file.pdf` in the current directory; pass a second argument for another output path. Edit `to-pdf/style.css` and re-run to iterate. Install the converter once with `npm install -g md-to-pdf`.
