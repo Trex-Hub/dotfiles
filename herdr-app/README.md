@@ -10,7 +10,8 @@ Config for the new Herdr app (`herdr-app`). The old Herdr config lives in `../he
 | `settings.json`       | `~/.config/herdr-app/settings.json`          | Zoom, sounds, appearance, `"theme": "gruvbox"`                  |
 | `themes/gruvbox.json` | `~/.config/herdr-app/themes/gruvbox.json`    | Gruvbox dark: terminal palette plus explicit panel `colors`     |
 | `mods/spaces-gruvbox/` | `~/.config/herdr-app/mods/spaces-gruvbox/` | Clone of the shipped `spaces` mod with Gruvbox space-tile colors (`main.js:39`) |
-| `layouts/main-gruvbox.json` | `~/.config/herdr-app/layouts/main-gruvbox.json` | Clone of the `main` layout using `spaces-gruvbox` |
+| `mods/tabs-gruvbox/` | `~/.config/herdr-app/mods/tabs-gruvbox/` | Clone of the shipped `tabs` mod: the new-tab `+` sits after the last tab pill (`main.js:107`) |
+| `layouts/main-gruvbox.json` | `~/.config/herdr-app/layouts/main-gruvbox.json` | Clone of the `main` layout using `spaces-gruvbox` and `tabs-gruvbox` |
 
 ## Setup
 
@@ -19,9 +20,11 @@ mkdir -p ~/.config/herdr-app/themes
 cp keys.json settings.json ~/.config/herdr-app/
 cp themes/gruvbox.json ~/.config/herdr-app/themes/
 mkdir -p ~/.config/herdr-app/mods ~/.config/herdr-app/layouts
-cp -r mods/spaces-gruvbox ~/.config/herdr-app/mods/
+cp -r mods/spaces-gruvbox mods/tabs-gruvbox ~/.config/herdr-app/mods/
 cp layouts/main-gruvbox.json ~/.config/herdr-app/layouts/
 ```
+
+Herdr writes `gpui-kit.d.ts` and `jsconfig.json` into every mod folder; they are machine-generated and not kept here.
 
 The app rewrites these files, so they are copied rather than symlinked. Re-copy from `~/.config/herdr-app/` into this folder after changing them.
 
@@ -40,6 +43,14 @@ These globally bind `ctrl-t`, `ctrl-y` and `ctrl-x`, so the shell no longer rece
 ## Space tiles
 
 The shipped `spaces` mod hard-codes its tile colors and Herdr restores edits to shipped mods, so `mods/spaces-gruvbox/` is a clone (`mod.clone`) with Gruvbox colors and dark tile text, and `layouts/main-gruvbox.json` is a clone of `main` pointing at it. Switch with `ctrl-shift-l`.
+
+## Tab bar
+
+Herdr's tab bar already has a `+`, but at the far right end, next to `Files` / `Changes`. `mods/tabs-gruvbox/` is a clone (`mod.clone`) with that one button moved inside the tab strip, so the `+` sits immediately after the last tab pill and scrolls with the tabs. It still opens the shipped `new-menu` popup (new terminal or any installed agent), i.e. a new **tab**; panes are still `ctrl-t` / `cmd-d` (right) and `ctrl-y` / `cmd-shift-d` (down). `layouts/main-gruvbox.json` points its `tabs` block at the clone. Re-clone and re-apply with:
+
+```bash
+herdr-app do mod.clone '{"name":"tabs","as":"tabs-gruvbox"}'   # then move the button at main.js:107
+```
 
 ## Theme
 
