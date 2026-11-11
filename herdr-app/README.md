@@ -7,7 +7,7 @@ Config for the new Herdr app (`herdr-app`). The old Herdr config lives in `../he
 | Path                  | Destination                                  | Notes                                                           |
 | --------------------- | -------------------------------------------- | --------------------------------------------------------------- |
 | `keys.json`           | `~/.config/herdr-app/keys.json`              | Shortcuts. Includes my `ctrl-t` / `ctrl-y` / `ctrl-x` pane keys |
-| `settings.json`       | `~/.config/herdr-app/settings.json`          | Zoom, sounds, appearance, `"theme": "gruvbox"`                  |
+| `settings.json`       | `~/.config/herdr-app/settings.json`          | Zoom, sounds, appearance, `"theme": "gruvbox"`, `"telemetry": false` |
 | `themes/gruvbox.json` | `~/.config/herdr-app/themes/gruvbox.json`    | Gruvbox dark: terminal palette plus explicit panel `colors`     |
 | `mods/spaces-gruvbox/` | `~/.config/herdr-app/mods/spaces-gruvbox/` | Clone of the shipped `spaces` mod with Gruvbox space-tile colors (`main.js:39`) |
 | `mods/tabs-gruvbox/` | `~/.config/herdr-app/mods/tabs-gruvbox/` | Clone of the shipped `tabs` mod: the new-tab `+` sits after the last tab pill (`main.js:107`) |
